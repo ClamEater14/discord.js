@@ -9,7 +9,8 @@
 		"format": "prettier --write . && eslint src __tests__ --ext mjs,js,ts --fix",
 		"docs": "typedoc --json docs/typedoc-out.json src/index.ts && ts-docgen -i docs/typedoc-out.json -c docs/index.yml -o docs/docs.json",
 		"prepublishOnly": "yarn build && yarn lint && yarn test",
-		"changelog": "git cliff --prepend ./CHANGELOG.md -u -c ./cliff.toml -r ../../ --include-path 'packages/voice/*'"
+		"changelog": "git cliff --prepend ./CHANGELOG.md -u -c ./cliff.toml -r ../../ --include-path 'packages/voice/*'",
+		"release": "cliff-jumper"
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -62,6 +63,7 @@
 		"@babel/preset-env": "^7.18.2",
 		"@babel/preset-typescript": "^7.17.12",
 		"@discordjs/scripts": "workspace:^",
+		"@favware/cliff-jumper": "^1.8.2",
 		"@types/jest": "^28.1.0",
 		"@types/node": "^16.11.38",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
